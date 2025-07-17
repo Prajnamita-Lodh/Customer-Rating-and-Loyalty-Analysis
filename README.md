@@ -2,6 +2,7 @@
 Developed Power BI dashboard to track customer satisfaction, repeat purchase behavior, and loyalty patterns. Analyzed geographic purchase trends, satisfaction scores, and returning customer data to uncover retention drivers and regional engagement insights for leading U.S. retail chain OmniRetail throughout 2024.
 
 ## [View the Dashboard](https://app.powerbi.com/view?r=eyJrIjoiNTU0NGMzODktZjQzZC00ZThhLTkwZjYtYjg1MWNiMjVkZmI5IiwidCI6IjQ2NTRiNmYxLTBlNDctNDU3OS1hOGExLTAyZmU5ZDk0M2M3YiIsImMiOjl9)
+<img width="720" height="1280" alt="Image" src="https://github.com/user-attachments/assets/4cb637e4-f8b6-49b2-933d-78b418f2e01f" />
 
 ## Introductiion:
 Customer satisfaction is the heartbeat of long-term success in retail — especially in a hybrid model like OmniRetail, where online and in-store experiences must align seamlessly.
