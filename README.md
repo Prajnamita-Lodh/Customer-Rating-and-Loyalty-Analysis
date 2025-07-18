@@ -1,4 +1,4 @@
-# Customer-Rating-and-Loyalty-Analysis
+# Customer Rating and Loyalty-Analysis
 Developed Power BI dashboard to track customer satisfaction, repeat purchase behavior, and loyalty patterns. Analyzed geographic purchase trends, satisfaction scores, and returning customer data to uncover retention drivers and regional engagement insights for leading U.S. retail chain OmniRetail throughout 2024.
 
 ## [View the Dashboard](https://app.powerbi.com/view?r=eyJrIjoiNTU0NGMzODktZjQzZC00ZThhLTkwZjYtYjg1MWNiMjVkZmI5IiwidCI6IjQ2NTRiNmYxLTBlNDctNDU3OS1hOGExLTAyZmU5ZDk0M2M3YiIsImMiOjl9)
@@ -90,5 +90,81 @@ It offers actionable insights based on demographics, repeat behavior, purchase p
 #### Bottom Line: Texas (TX) stood out with exceptional overall performance. Phoenix, Chicago, Los Angeles, Texas, and Illinois are strategic focus areas for loyalty, retention, and satisfaction-driven initiatives.
 
 
+## Step Followed
 
 
+
+
+Creating Measure Table:
+To develop a dynamic Power BI report on Customer Satisfaction and Loyalty dashboard, I created a dedicated Measure Table to organize and centralize all the key DAX measures at one place. For creating a new Measures table, the following DAX expression was written;
+
+    MeasuresTable = 
+    SELECTCOLUMNS(
+          FILTER(
+            { (1) },
+            FALSE()
+          ),
+        "Measure", [Value]
+    )
+
+#### *Step : Used DAX expression in Measures Table*
+
+1. To calculate *"Average Satisfaction Score"*:
+
+        Average Satisfaction Score = AVERAGE(Data[Satisfaction_Score])
+
+2. To count the *"Total Customer"*:
+
+       Total Customer = COUNTROWS(Data)
+
+3. To count the customer on the basis of the customer:
+
+        A.  Male Customer = 
+            CALCULATE
+                (COUNTROWS(Data), Data[Gender] = "Male")
+
+        B.  Female Customer = 
+            CALCULATE
+                (COUNTROWS(Data), Data[Gender] = "Female")
+
+        C. Male and Female Ratio = 
+            DIVIDE([Male Customer], [Female Customer])
+
+4. To count the *"High Loyalty Customer"*:
+
+        High Loyalty Customer (%) = DIVIDE(CALCULATE(COUNTROWS(Data), Data[Loyalty_Level] = "High"), [Total Customer])
+
+5. To count the *"Support Contact Rate"*:
+
+        Support Contact Rate = DIVIDE(CALCULATE(COUNTROWS(FILTER(Data, Data[Support_Contacted]="Yes"))),[Total Customer])
+
+6. To calculate the *"Satisfaction Status"*:
+
+        Satisfaction Status = SWITCH( TRUE(),
+            [Average Satisfaction Score] >= 1 && [Average Satisfaction Score] <= 2.99, "Very Poor",
+            [Average Satisfaction Score] >= 3 && [Average Satisfaction Score] <= 4.99, "Average",
+            [Average Satisfaction Score] >= 5 && [Average Satisfaction Score] <= 6.99, "Good",
+            [Average Satisfaction Score] >= 7 && [Average Satisfaction Score] <= 8.99, "Very Good",
+            [Average Satisfaction Score] >= 9 && [Average Satisfaction Score] <= 10, "Excellent", 
+            "Unknown")
+
+7. To create the dynamic *"Satisfaction Status Color"*:
+
+        Satisfaction Status Color Indication = 
+            SWITCH(
+            TRUE(),
+        [Satisfaction Status] = "Very Poor" , "#FF3B2D", // Red
+        [Satisfaction Status] = "Average" , "#FFAF28", // Orange
+        [Satisfaction Status] = "Good" , "#F5E100", // Yellow
+        [Satisfaction Status] = "Very Good" , "#ACE552", // Green
+        [Satisfaction Status] = "Excellent" , "#77D046", // Dark Green
+        "#616569")
+
+8. To calculate *"% of Repeat Customer"*:
+
+       % of Repeat Customer = 
+          DIVIDE(CALCULATE(COUNTROWS(Data), Data[Customer Classification Group]= "High-frequency shopper"), [Total Customer],0)
+
+
+
+   
