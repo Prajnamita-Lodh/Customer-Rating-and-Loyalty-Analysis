@@ -93,9 +93,52 @@ It offers actionable insights based on demographics, repeat behavior, purchase p
 ## Step Followed
 
 
+- Step 1 : Load data into Power BI Desktop, the dataset is a .xlsx file.
 
+- Step 2 : Open Power Query Editor & in the View tab under the Data Preview section, check "column distribution", "column quality," & "column profile" options.
 
-Creating Measure Table:
+- Step 3 : Also, since by default, the profile will be opened only for 1000 rows so you need to select "column profiling based on entire dataset".
+
+- Step 4 : It was observed that in none of the columns, errors & empty values were present.
+
+- Step 5 : To establish a more informative and insightful dashboard, a few columns are added in Power Query to this dataset.
+
+     *A.* To segment customers based on their engagement frequency, a new column Customer Classification Group was created using a conditional logic applied to the existing Group column. 
+     Here is the condition -
+     - If the value in the Group column is A, then the output is High frequency Shopper.
+    - If the value is B, then the output is Medium frequency Shopper.
+    - If the value is C, then the output is New frequency Shopper.
+
+    <img width="878" height="278" alt="Image" src="https://github.com/user-attachments/assets/3e784b1c-a140-4c99-95cc-0de30d62810e" />
+
+    *B.* In the raw dataset, city and state information were combined into a single column, separated by a period (.) delimiter.To make the data more structured and analysis-ready, I used the Split Column by Delimiter feature in Power Query. As a result, two separate columns — City and State — were created. 
+
+    <img width="334" height="425" alt="Image" src="https://github.com/user-attachments/assets/02ebd7c8-f954-4bbd-ab03-638cbea4d49a" />
+
+    *C.* To estimate the Birth Year of each customer, a new calculated column was created using the reference year 2024. 
+
+        Birth Year = 2024 - [Age]
+
+    <img width="441" height="185" alt="Image" src="https://github.com/user-attachments/assets/523a4ca5-cc1f-493a-b9a5-24f78d25184c" />
+
+    *D.* To segment customers based on their generation, a new column, Generation, was created using a conditional logic applied to the existing Birth Year column. Here is the condition –
+  - If the value in the Birth Year column is 1964, then the output is Baby Boomer.
+  - If the value is less than or equal to 1965, then the output is Generation X.
+  - If the value is 1980, then the output is Millennials.
+  - If the value is less than or equal to 1994, then the output is Millennials.
+  - If the value is greater than or equal to 1995, then the output is Millennials.
+
+    <img width="837" height="366" alt="Image" src="https://github.com/user-attachments/assets/d6bdedad-b1fc-490e-9d3b-f8a2f6f5c2cc" />
+
+  *E.* To segment customers based on their Satisfaction Score, a new column Satisfaction Status was created using conditional logic applied to the existing Satisfaction Score column. Here is the condition –
+    
+    - If the Satisfaction Score is between 1 and 2.99, then the output is Very Poor.
+    - If the score is between 3 and 4.99, then the output is Average.
+    - If the score is between 5 and 6.99, then the output is Good.
+    - If the score is between 7 and 8.99, then the output is Very Good.
+    - If the score is between 9 and 10, then the output is Excellent.
+
+## Creating Measure Table:
 To develop a dynamic Power BI report on Customer Satisfaction and Loyalty dashboard, I created a dedicated Measure Table to organize and centralize all the key DAX measures at one place. For creating a new Measures table, the following DAX expression was written;
 
     MeasuresTable = 
