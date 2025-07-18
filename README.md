@@ -15,15 +15,23 @@ From pinpointing service gaps to uncovering regional patterns and experience tre
 *Your mission is to create an analytical report that identifies the key factors influencing customer satisfaction and loyalty across different regions, customer demographics, and support experiences.*
 #### *Key questions to guide your analysis:*
 
-*What are the main factors contributing to high vs. low satisfaction scores?*
-*Are certain customer segments (by age, gender, group) more loyal than others?*
-*Which locations (cities or states) report consistently high or low satisfaction scores?*
-*Does contacting customer support negatively impact satisfaction?*
-*How do factors like “Price” or “Product Variety” influence customer loyalty?*
-*Do repeat purchasers report higher satisfaction compared to one-time buyers?*
-*Are there regional clusters of highly loyal or dissatisfied customers based on location data?*
-*What is the relationship between loyalty level and satisfaction score?*
-*Do specific demographic groups favor certain satisfaction factors (e.g., Packaging vs. Price)?*
+*a) What are the main factors contributing to high vs. low satisfaction scores?*
+
+*b) Are certain customer segments (by age, gender, group) more loyal than others?*
+
+*c)  Locations (cities or states) report consistently high or low satisfaction scores?*
+
+*d) Does contacting customer support negatively impact satisfaction?*
+
+*e) How do factors like “Price” or “Product Variety” influence customer loyalty?*
+
+*f) Do repeat purchasers report higher satisfaction compared to one-time buyers?*
+
+*g) Are there regional clusters of highly loyal or dissatisfied customers based on location data?*
+
+*h) What is the relationship between loyalty level and satisfaction score?*
+
+*i) Do specific demographic groups favor certain satisfaction factors (e.g., Packaging vs. Price)?*
 
 
 ## Files Included:
@@ -68,14 +76,14 @@ It offers actionable insights based on demographics, repeat behavior, purchase p
 
 ### Customer Demographics:
 
-1. Female customers (66) outnumber males (54), Female-to-male ratio is 0.82; indicating stronger engagement from women.
+- Female customers (66) outnumber males (54), Female-to-male ratio is 0.82; indicating stronger engagement from women.
 
-2. Customers aged 50–59 are the highest contributors, so they should be the focus of retention efforts.
-3. Senior citizens (60–69) are the least active, showing limited interaction with support or shopping.
-4. 46.67% of users contacted the Contract Support Team; 58.93% of them were female—females prefer guided assistance.
-5. 40% are repeat customers with "Good" average satisfaction score (5.13); retention strategy is working. “Customer service” is the top satisfaction driver; this area must continue to be a core focus.
-6. 57.5% of customers made the purchase successfully converts to sales.
-7. Only 31% of users show high loyalty; loyalty-building initiatives need to be prioritized. Females aged 50–59 show the highest low loyalty rate - targeted loyalty programs required. Females aged 30–39 show the highest loyalty—this group can be used for advocacy and referral campaigns.
+- Customers aged 50–59 are the highest contributors, so they should be the focus of retention efforts.
+- Senior citizens (60–69) are the least active, showing limited interaction with support or shopping.
+- 46.67% of users contacted the Contract Support Team; 58.93% of them were female—females prefer guided assistance.
+- 40% are repeat customers with "Good" average satisfaction score (5.13); retention strategy is working. “Customer service” is the top satisfaction driver; this area must continue to be a core focus.
+- 57.5% of customers made the purchase successfully converts to sales.
+- Only 31% of users show high loyalty; loyalty-building initiatives need to be prioritized. Females aged 50–59 show the highest low loyalty rate - targeted loyalty programs required. Females aged 30–39 show the highest loyalty—this group can be used for advocacy and referral campaigns.
 
 #### Bottom Line: Support quality is driving purchases and satisfaction, especially among females—but loyalty is weak in key age groups. It is suggested to double down on service consistency and launch targeted loyalty campaigns by age and gender.
 
@@ -91,7 +99,6 @@ It offers actionable insights based on demographics, repeat behavior, purchase p
 
 
 ## Step Followed
-
 
 - Step 1 : Load data into Power BI Desktop, the dataset is a .xlsx file.
 
@@ -130,7 +137,7 @@ It offers actionable insights based on demographics, repeat behavior, purchase p
 
     <img width="837" height="366" alt="Image" src="https://github.com/user-attachments/assets/d6bdedad-b1fc-490e-9d3b-f8a2f6f5c2cc" />
 
-  *E.* To segment customers based on their Satisfaction Score, a new column Satisfaction Status was created using conditional logic applied to the existing Satisfaction Score column. Here is the condition –
+  *E.* To segment customers based on their Satisfaction Score, a new column, Satisfaction Status, was created using conditional logic applied to the existing Satisfaction Score column. Here is the condition –
     
     - If the Satisfaction Score is between 1 and 2.99, then the output is Very Poor.
     - If the score is between 3 and 4.99, then the output is Average.
@@ -138,7 +145,27 @@ It offers actionable insights based on demographics, repeat behavior, purchase p
     - If the score is between 7 and 8.99, then the output is Very Good.
     - If the score is between 9 and 10, then the output is Excellent.
 
-## Creating Measure Table:
+- Step 6 : Applied the transformation in Power Query and closed it to load the data into Power BI for building the Customer Satisfaction Dashboard.
+
+### Page Set up:
+
+- Step 7 : To organise the report, at first text box is inseted in the report to write the TITLE of the page. Name the report as "Customer Insight".
+
+- Step 8 : In the report view, under the insert tab, using image option, company's logo was added to the report design area at the left corner. Also added the "Home" action button for navigation. Here is visual outcome:
+
+  <img width="411" height="164" alt="Image" src="https://github.com/user-attachments/assets/1349f9b1-54df-4c69-9a39-da7cad1aaee9" />
+
+- Step 9 : "Filter" button is included to allow users to slice the data dynamically, and a "Reset" action button is added to clear all applied filters at once.
+
+   <img width="105" height="138" alt="Image" src="https://github.com/user-attachments/assets/498b67b2-6b00-4473-bb82-8b0cbf9917ce" />
+
+- Step 10 : In order to navigate the report add the another three "Action" button as "Customer Satisfaction", "Loyalty Level", and "Customer Demography" horizontally.
+
+   <img width="432" height="226" alt="Image" src="https://github.com/user-attachments/assets/31d2dad8-ed4a-4707-9bef-effc1d53746b" />
+
+- Step 11 : Make the duplicate of the page for three times to create the separate Canvas for each part.
+
+### Creating Measure Table:
 To develop a dynamic Power BI report on Customer Satisfaction and Loyalty dashboard, I created a dedicated Measure Table to organize and centralize all the key DAX measures at one place. For creating a new Measures table, the following DAX expression was written;
 
     MeasuresTable = 
@@ -150,7 +177,7 @@ To develop a dynamic Power BI report on Customer Satisfaction and Loyalty dashbo
         "Measure", [Value]
     )
 
-#### *Step : Used DAX expression in Measures Table*
+#### *Step 12 : Used DAX expression in Measures Table*
 
 1. To calculate *"Average Satisfaction Score"*:
 
