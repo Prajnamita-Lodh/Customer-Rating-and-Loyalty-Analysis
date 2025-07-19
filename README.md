@@ -238,3 +238,51 @@ To develop a dynamic Power BI report on Customer Satisfaction and Loyalty dashbo
 
 
    
+## Recommendations for Business Improvement Based on Customer Satisfaction Insights
+
+- #### Smaller Packs, Bigger Impact:
+
+    Analysis shows that customers are price-sensitive and expect a wider variety of flavors, sizes, and product types. To improve satisfaction and drive sales, it is recommended to launch smaller, budget-friendly product packs and ensure consistent availability of products across multiple price points.
+
+- #### Unhappy Customers, Untapped Insights
+
+    Around 52% of customers rated their satisfaction between 1 and 5, and notably, 25% gave the lowest scores (1 or 2) in the CSAT survey. This indicates a significant portion of dissatisfied customers. However, it’s observed that customers who interacted with support team, to give higher satisfaction ratings. To improve overall satisfaction and reduce negative feedback, it’s recommended to proactively reach out to low-scoring customers to understand their concerns, address service gaps, and refine support processes accordingly to drive business growth.
+
+- #### Support Drives Repeat Business:
+
+    The Support team plays a critical role in enhancing customer satisfaction and loyalty. Analysis shows that nearly 50% of customers who made a purchase also contacted the support team, highlighting how essential support interactions are in the overall customer journey. Among these, 39% were repeat customers, indicating that positive support experiences are strongly linked to repeat business. To strengthen this impact, it is recommended to assign additional resources to the support function—this could include staffing, training, or process improvements—to ensure faster response times, better issue resolution, and ultimately, greater customer satisfaction and business success.
+
+- #### Young Buyers, Big Potential:
+
+    The 20–29 age group demonstrates high potential to drive business success, with 69.23% of customers in this group having contacted support, resulting in a 53.58% purchase rate and a 46% loyalty level. This highlights that support interactions play a key role in building customer loyalty. However, the overall customer count in this age segment remains low. To strengthen performance in this area, it is recommended to launch targeted digital marketing campaigns and offer exclusive discounts (both online and in-store) to attract more customers from this age group and increase their purchase activity.
+
+- #### Mid-Age Shoppers, Strongest Spenders:
+
+    The 40–49 age group shows the highest purchase rate at 64.52%, making them a key revenue-driving segment. To capitalize on this, it's recommended to offer targeted promotional codes to this group to encourage continued purchases. Additionally, introducing a loyalty program can help convert one-time buyers into repeat customers, boosting retention and long-term revenue growth for the store.
+
+- #### San Antonio Needs a Local Touch: 
+
+    Focus on San Antonio for improvement, as it shows the lowest satisfaction score and repeat customer rate—consider cultural sensitivity as a factor, and collaborate with local partners to apply successful strategies used in top-performing cities like Chicago.
+
+- #### Arizona: Low Buzz, High Opportunity:
+
+    The dashboard reveals that customer volume in Arizona is low, and those who do purchase report lower satisfaction levels. To address this, a customer loyalty program can be introduced to encourage repeat engagement. Additionally, expanding the support team’s outreach efforts in this region can help directly resolve issues, improve customer experience, and build trust with the brand.
+
+- #### New York: Great Start, Weak Follow-Up:
+
+    Despite a healthy volume of first-time customers in New York, the repeat purchase rate is low. To improve customer retention, it's recommended to implement a “discount on next purchase” scheme. This incentive can nudge first-time buyers to return, increasing customer lifetime value and strengthening brand loyalty in a competitive market.
+
+  ## Snapshot of Customer Satisfaction Performance::
+
+<img width="955" height="534" alt="Image" src="https://github.com/user-attachments/assets/aece5972-0ca2-4903-85b6-edd1e5b377ef" />
+
+## Snapshot of Customer Demographics:
+
+<img width="955" height="537" alt="Image" src="https://github.com/user-attachments/assets/e3091540-d5f9-4dce-87b8-294c9d89e434" />
+
+## Snapshot of Regional Insights:
+
+<img width="953" height="536" alt="Image" src="https://github.com/user-attachments/assets/c8a4fb1d-ef6c-422d-88b0-260959558296" />
+
+
+<img width="956" height="536" alt="Image" src="https://github.com/user-attachments/assets/262902a5-c869-43a5-83ff-4b9d4bfd5f60" />
